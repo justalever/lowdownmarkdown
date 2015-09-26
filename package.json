@@ -1,0 +1,8 @@
+{
+  "name": "the-lowdown-on-markdown",
+  "version": "1.0.0",
+  "respository": "https://github.com/justalever/lowdownmarkdown",
+  "devDependencies": {
+    "gulp-concat": "^2.6.0"
+  }
+}
