@@ -3,21 +3,16 @@ var gulp = require('gulp'),
     autoprefixer = require('gulp-autoprefixer'),
     minifycss = require('gulp-minify-css'),
     newer = require('gulp-newer'),
-    imagemin = require('gulp-imagemin'),
     browserSync = require('browser-sync').create(),
     reload = browserSync.reload,
     concat = require('gulp-concat'),
     uglify = require('gulp-uglify'),
     watch = require('gulp-watch');
 
-var imgSrc = 'images/*';
-var imgDest = 'images/*';
-
-
 
 gulp.task('browser-sync', function() {
     browserSync.init({
-        proxy: "localhost:8888/webcrunch-gulp"
+        proxy: "localhost:8888/markdown"
     });
 });
 
@@ -40,20 +35,8 @@ gulp.task('watch', function() {
 	// Watch .scss files
 	gulp.watch('scss/*.scss', ['sass']).on("change", browserSync.reload);
     gulp.watch('scss/**/*.scss', ['sass']).on("change", browserSync.reload);
-    gulp.watch('assets/dev/*.js', ['js']).on("change", browserSync.reload);
-
-	// watch original images directory
-	//gulp.watch('assets/images/originals/**', ['images']);
+    gulp.watch('js/dev/*.js', ['js']).on("change", browserSync.reload);
 });
-
-gulp.task('images', function() {
-	return gulp.src(imgSrc, {base: 'images/'})
-		.pipe(newer(imgDest))
-        .pipe(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true }))
-        .pipe(gulp.dest(imgDest));
-});
-
-
 
 var jsInput = {
     js: 'js/dev/**/*.js'
@@ -71,4 +54,4 @@ gulp.task('js', function(){
 
 //gulp.task('default', ['styles', 'images']);
 
-gulp.task('default',['sass', 'browser-sync','watch','images', 'js']);
+gulp.task('default',['sass', 'browser-sync', 'watch', 'js']);

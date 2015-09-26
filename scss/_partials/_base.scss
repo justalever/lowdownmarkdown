@@ -1,0 +1,206 @@
+body {
+  background: $pagebackground;
+}
+
+img {
+  max-width: 100%;
+}
+
+.text-center { text-align: center !important; }
+.text-right { text-align: right !important; }
+
+.demo-layout-transparent .mdl-layout__header,
+.demo-layout-transparent .mdl-layout__drawer-button {
+  color: white;
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  position: relative;
+  padding-right: 5px;
+  top: 5px;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+.mdl-layout__drawer-button {
+  top: -5px;
+  @include bp-medium {
+    background: $blue;
+    padding: 0px;
+    color: white;
+    border-radius: 3px;
+    opacity: .8;
+    i {
+      top:2px;
+      left: 2px;
+    }
+
+  }
+}
+
+.markdown {
+  border-radius: 2px;
+  padding: 80px 56px;
+  margin-bottom: 80px;
+   @include bp-medium {
+      padding: 10px;
+  }
+}
+#wc-logo {
+  width:28px;
+  height:28px;
+  margin-right: 10px;
+}
+.table-of-contents {
+  list-style: none;
+  margin: 0;
+  padding:0;
+}
+#mascot {
+  width:575px;
+  height: 575px;
+  position:absolute;
+  top: 30px;
+  left:-40px;
+  fill: #ccc;
+  @include bp-medium-large {
+    display: none;
+  }
+
+}
+
+.page-title{
+  margin-bottom: 8px;
+  span {
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 46px;
+  }
+}
+.subtitle {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+  display: block;
+  font-family: 'Roboto-Light';
+}
+.markdown-body .h1-underlined, .h2-underlined {
+  border-bottom: 1px solid #ddd;
+}
+
+.markdown-body {
+ .block {
+    margin-bottom: 120px;
+
+    .block-output-title {
+      margin-top: 4em;
+      background: $blue;
+      padding: 10px 10px 12px 10px;
+      color: white;
+      font-size: 20px;
+      &:first-of-type {
+        margin-top: 1em;
+      }
+    }
+    .block-preview {
+      code {
+      background: #eee !important;
+      padding: 2px;
+      border-radius: 3px;
+      }
+    }
+  }
+  .markdown-elements {
+    margin-left: 34%;
+     @include bp-medium {
+      margin:0;
+
+    }
+  }
+  .markdown-sidebar {
+    @include bp-medium {
+      margin: 0;
+      position: static;
+      width: 100%;
+  }
+    position: fixed;
+    width:  calc(25% - 16px);
+    transition: all ease-in-out .3s;
+    cursor: pointer;
+    color: #3E4EB8;
+    border-radius: 4px;
+    opacity: .8;
+    padding-bottom: 20px;
+    margin-top: 40px;
+
+    h4 {
+      padding: 0 20px;
+      a {
+        padding:0;
+        font-size: 24px;
+        &:hover {
+          background: none;
+          color: darken($blue, 5%);
+        }
+      }
+    }
+
+    a {
+      color: #3E4EB8;
+      text-decoration: none;
+      font-size: 16px;
+      line-height: 30px;
+      padding: 0 20px;
+      display: block;
+      &:hover {
+        background: #3E4EB8;
+        color: white;
+      }
+    }
+
+    &:hover {
+      background: darken(#f8f8f8, 2%);
+
+    }
+  }
+}
+
+
+
+.markdown-card-wide.mdl-card {
+  width: 512px;
+  margin: 2em auto;
+  @include bp-medium {
+    width: 100%;
+    margin: 1em auto;
+  }
+}
+.markdown-card-wide > .mdl-card__title {
+  color: #fff;
+  height: 176px;
+  background: $green url('../images/web-crunch-mascot.png') top right no-repeat;
+  background-position: 96% 40%;
+}
+.markdown-card-wide > .mdl-card__menu {
+  color: #fff;
+}
